@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OOO</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+    <script>
+$(function () {
+
+    $(document).ready(function () {
+
+        // Build the chart
+        $('#container').highcharts({
+						credits: {
+									enabled: false
+						},
+						chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+								backgroundColor: {
+                	radialGradient: [0, 0, 500, 500],
+                	stops: [
+                    [0, 'gainsboro'],
+                    //[0.5, 'gainsboro'],
+										[1, 'white']
+                	]
+            			},
+            },
+            title: {
+                text: 'Reasons why I go to the bathroom during class'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: '%',
+                colorByPoint: true,
+                data: [{
+                    name: 'To go to the bathroom',
+                    y: 1,
+										sliced: true,
+                    selected: true
+                }, {
+                    name: 'To go to the Chamber of Secrets',
+                    y: 99
+
+                }]
+            }]
+        });
+    });
+
+
+		Highcharts.setOptions({
+        colors: ['#0033ff', '#00ff00']
+    });
+
+
+
+
+
+});
+
+</script>
+<style>
+
+.emoji1 {
+	margin: 100px;
+	margin-left: 300px;
+}
+
+.emoji3 {
+	margin-left: 1000px;
+}
+
+
+.snake2 {
+	position:fixed;
+	top: 500px;
+	left: 1100px;
+}
+
+.snake3 {
+	position:fixed;
+	top: 200px;
+	left: 1500px;
+}
+</style>
+</head>
+<body>
+	<div class="snake1"> &#x1F40D</div>
+	<div class="emoji1"> &#128561</div>
+
+
+
+	<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+		<div class="snake2"> &#x1F40D</div>
+		<div class="snake3"> &#x1F40D</div>
+	<div class="emoji2"> &#128561</div>
+	<div class="emoji3"> &#128561</div>
+</body>
+</html>
